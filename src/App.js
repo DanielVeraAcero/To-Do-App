@@ -1,9 +1,9 @@
 import React from "react";
-import { ToDoCounter } from "./ToDoCounter/ToDoCounter";
-import { ToDoSearch } from "./ToDoSearch/ToDoSearch";
-import { ToDoList } from "./ToDoList/ToDoList";
-import { ToDoItem } from "./ToDoItem/ToDoItem";
-import { CreateToDoButton } from "./CreateToDoButton/CreateToDoButton";
+import { ToDoCounter } from "./components/ToDoCounter/ToDoCounter";
+import { ToDoSearch } from "./components/ToDoSearch/ToDoSearch";
+import { ToDoList } from "./components/ToDoList/ToDoList";
+import { ToDoItem } from "./components/ToDoItem/ToDoItem";
+import { CreateToDoButton } from "./components/CreateToDoButton/CreateToDoButton";
 // import './App.css';
 
 const todos = [
