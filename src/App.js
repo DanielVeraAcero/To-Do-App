@@ -1,8 +1,9 @@
 import React from "react";
-import { ToDoCounter } from "./ToDoCounter";
-import { ToDoSearch } from "./ToDoSearch";
-import { ToDoList } from "./ToDoList";
-import { ToDoItem } from "./ToDoItem";
+import { ToDoCounter } from "./ToDoCounter/ToDoCounter";
+import { ToDoSearch } from "./ToDoSearch/ToDoSearch";
+import { ToDoList } from "./ToDoList/ToDoList";
+import { ToDoItem } from "./ToDoItem/ToDoItem";
+import { CreateToDoButton } from "./CreateToDoButton/CreateToDoButton";
 // import './App.css';
 
 const todos = [
@@ -30,8 +31,7 @@ function App() {
           <ToDoItem key={todo.text} text={todo.text} />
         ))}
       </ToDoList>}
-      {/* <CreateToDoButton /> */}
-      <button>+</button>
+      {<CreateToDoButton />}      
     </React.Fragment>
   );
 }
