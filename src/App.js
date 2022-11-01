@@ -8,30 +8,30 @@ import { CreateToDoButton } from "./components/CreateToDoButton/CreateToDoButton
 
 const todos = [
   {
-    text: 'cortar cebolla',
-    completed: false
+    text: "cortar cebolla",
+    completed: false,
   },
   {
-    text: 'estudiar',
-    completed: false
+    text: "estudiar",
+    completed: true,
   },
   {
-    text: 'react',
-    completed: false
+    text: "react",
+    completed: false,
   },
-]
+];
 
 function App() {
   return (
     <React.Fragment>
-      {<ToDoCounter />}      
-      {<ToDoSearch />}      
-      {<ToDoList>
-        {todos.map(todo => (
-          <ToDoItem key={todo.text} text={todo.text} />
+      <ToDoCounter />
+      <ToDoSearch />
+      <ToDoList>
+        {todos.map((todo, index) => (
+          <ToDoItem key={index} text={todo.text} completed={todo.completed} />
         ))}
-      </ToDoList>}
-      {<CreateToDoButton />}      
+      </ToDoList>
+      <CreateToDoButton />
     </React.Fragment>
   );
 }
