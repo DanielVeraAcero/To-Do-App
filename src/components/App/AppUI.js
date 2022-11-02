@@ -5,10 +5,18 @@ import { ToDoSearch } from "../ToDoSearch/ToDoSearch";
 import { ToDoList } from "../ToDoList/ToDoList";
 import { ToDoItem } from "../ToDoItem/ToDoItem";
 import { CreateToDoButton } from "../CreateToDoButton/CreateToDoButton";
+import { Modal } from "../Modal/Modal";
 
 function AppUI() {
-  const { error, loading, searchedToDos, completeToDos, deleteToDos } =
-    React.useContext(ToDoContext);
+  const {
+    error,
+    loading,
+    searchedToDos,
+    completeToDos,
+    deleteToDos,
+    openModal,
+    setOpenModal,
+  } = React.useContext(ToDoContext);
 
   return (
     <React.Fragment>
@@ -29,7 +37,16 @@ function AppUI() {
           />
         ))}
       </ToDoList>
-      <CreateToDoButton />
+
+      {openModal && (
+        <Modal>
+          <p>{searchedToDos[0]?.text}</p>
+        </Modal>
+      )}
+
+      <CreateToDoButton 
+        setOpenModal={setOpenModal}
+      />
     </React.Fragment>
   );
 }
