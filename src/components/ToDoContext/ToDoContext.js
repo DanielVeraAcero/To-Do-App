@@ -26,6 +26,15 @@ function ToDoProvider(props) {
       return toDoText.includes(searchText);
     });
   }
+  
+  const addToDos = (text) => {
+    const newToDos = [...toDos];
+    newToDos.push({
+      completed: false,
+      text: text,
+    });
+    saveToDos(newToDos);
+  };
 
   const completeToDos = (text) => {
     const toDoIndex = toDos.findIndex((toDo) => toDo.text == text);
@@ -50,6 +59,7 @@ function ToDoProvider(props) {
         searchValue,
         setSearchValue,
         searchedToDos,
+        addToDos,
         completeToDos,
         deleteToDos,
         openModal,

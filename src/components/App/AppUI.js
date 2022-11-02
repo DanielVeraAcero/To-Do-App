@@ -6,6 +6,7 @@ import { ToDoList } from "../ToDoList/ToDoList";
 import { ToDoItem } from "../ToDoItem/ToDoItem";
 import { CreateToDoButton } from "../CreateToDoButton/CreateToDoButton";
 import { Modal } from "../Modal/Modal";
+import { ToDoForm } from "../ToDoFrom/ToDoForm";
 
 function AppUI() {
   const {
@@ -27,26 +28,24 @@ function AppUI() {
         {loading && <p>Loading</p>}
         {!loading && !searchedToDos.length && <p>Crea tu primera tarea</p>}
 
-        {searchedToDos.map((todo, index) => (
+        {searchedToDos.map((toDo, index) => (
           <ToDoItem
             key={index}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => completeToDos(todo.text)}
-            onDelete={() => deleteToDos(todo.text)}
+            text={toDo.text}
+            completed={toDo.completed}
+            onComplete={() => completeToDos(toDo.text)}
+            onDelete={() => deleteToDos(toDo.text)}
           />
         ))}
       </ToDoList>
 
       {openModal && (
         <Modal>
-          <p>{searchedToDos[0]?.text}</p>
+          <ToDoForm />
         </Modal>
       )}
 
-      <CreateToDoButton 
-        setOpenModal={setOpenModal}
-      />
+      <CreateToDoButton setOpenModal={setOpenModal} />
     </React.Fragment>
   );
 }
